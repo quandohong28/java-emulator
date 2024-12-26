@@ -1,4 +1,4 @@
-const { ipcRenderer } = require('electron');
+const { ipcRenderer, shell } = require('electron');
 
 document.addEventListener('DOMContentLoaded', () => {
     ipcRenderer.send('get-jars');
@@ -16,7 +16,8 @@ function importJar() {
 
 function runJar(jarId) {
     // open new window to run the jar
+}
 
-    
-    
+function openInBrowser(url) {
+    shell.openExternal(url);
 }

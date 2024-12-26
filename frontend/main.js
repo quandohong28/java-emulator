@@ -12,12 +12,11 @@ app.on('ready', () => {
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
         },
-        title: 'Jar Manager',
         icon: path.join(__dirname, './assets/default-icon.png'),
     });
 
     mainWindow.loadFile('index.html');
-    // mainWindow.loadURL('http://localhost:5173');
+    mainWindow.webContents.openDevTools();
 });
 
 ipcMain.on('get-jars', async (event) => {
