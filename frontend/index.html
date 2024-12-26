@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jar Stack</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container p-10 pb-0 bg-gray-100 min-h-screen min-w-full">
+        <div class="flex items-center justify-between mb-8">
+            <h1 class="text-red font-medium">Java Stack - Trình giả lập java cho macOS</h1>
+            <div class="flex items-center justify-end gap-2">
+                <button class="bg-blue-500 text-white border rounded-full px-2 py-1 text-xs font-semibold">
+                    Thông tin ứng dụng
+                </button>
+                <button class="bg-blue-500 text-white border rounded-full px-2 py-1 text-xs font-semibold">
+                    <img src="./assets/settings.svg" class="h-4 w-4" alt="">
+                </button>
+                <button class="bg-yellow-500 text-white border rounded-full px-2 py-1 text-xs font-semibold">Ủng hộ
+                    tôi</button>
+            </div>
+        </div>
+
+        <div class="mb-4 p-4 bg-white rounded-2xl flex items-center justify-between">
+            <div class="">
+                <h2 class="font-medium text-sm">Import file</h2>
+                <p class="text-xs text-gray-500">Để sử dụng trình giả lập, bạn cần import file .jar vào trình giả lập
+                </p>
+            </div>
+            <div class="flex items-center gap-2 group-button">
+                <button onclick="importJar()"
+                    class="bg-gray-200 text-gray-700 border rounded-full px-2 py-1 text-xs font-semibold">Chọn
+                    file</button>
+                <button onclick="importJar()"
+                    class="bg-blue-500 text-white border rounded-full px-2 py-1 text-xs font-semibold">Nhập</button>
+                <input type="file" id="jarInput" hidden>
+            </div>
+        </div>
+
+        <div class="mb-8 p-4 bg-white rounded-2xl overflow-y-auto scrollbar-hidden h-96">
+            <h2 class="font-medium text-sm mb-4">Danh sách ứng dụng</h2>
+            <div class="grid grid-cols-4 gap-4">
+                <div
+                    class="text-center flex flex-col gap-2 items-center justify-center p-4 rounded-3xl shadow relative group">
+                    <img src="./assets/default-icon.png" class="overflow-hidden w-12 h-12" alt="">
+                    <p class="text-xs font-medium line-clamp-2 overflow-hidden w-24 mb-2 min-h-8">App 1
+                        daskffbaslfdnaskdjfđấ fasdf fasdfnasdf</p>
+                    <button
+                        class="hidden group-hover:block absolute top-2 right-2 bg-gray-200 border rounded-full flex items-center justify-center">
+                        <img src="./assets/info.svg" class="h-4 w-4" alt="">
+                    </button>
+
+                    <button onclick="runJar(1)"
+                        class="bg-blue-500 text-white border rounded-full px-2 py-1 text-xs font-semibold flex items-center gap-2">
+                        <img src="./assets/play.svg" class="h-4 w-4" alt="">
+                        <span>Khởi chạy</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div id="jarList"></div>
+    <script type="module" src="renderer.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</body>
+
+</html>
